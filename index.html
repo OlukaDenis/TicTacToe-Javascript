@@ -9,11 +9,24 @@
   <body>
     <form class="form" id="form">
       <label for="player1">Player "X"</label>
-      <input type="text" name="player1" id="player1" />
+      <input type="text" name="player1" id="player1" minlength="3" maxlength="12">
       <label for="player2">Player "0"</label>
-      <input type="text" name="player2" id="player2" />
+      <input type="text" name="player2" id="player2" minlength="3" maxlength="12">
       <input type="submit" name="sumbit" id="setPlayerBtn" value="Start game" />
     </form>
+
+    <div class="game-settings">
+      <div class="game-info">
+        <h3><span>Name</span> <span>Won</span> <span>Lost</span> </h3>
+        <h4><span id="playerX">Player X:</span> <span id="xWins">0</span> <span id="xLost">0</span> </h4>
+        <h4><span id="playerO">Player O:</span> <span id="oWins">0</span> <span id="oLost">0</span></h4>
+      </div>
+
+      <button id="finishGame">Finish game</button>
+      <button id="resetGame">Reset Game</button>
+    </div>
+    
+
     <div class="board-container" id="boardContainer">
       <div class="board">
         <div class="board-cell cursor-pointer" id="0|0"></div>

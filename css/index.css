@@ -2,11 +2,12 @@ body {
   display: flex;
 }
 
-form {
+.form {  
   width: 30%;
   display: flex;
   flex-direction: column;
 }
+
 
 form > input[type="text"] {
   width: 96%;
@@ -16,6 +17,24 @@ form > input[type="text"] {
 form > input[type="submit"] {
   width: 60%;
   align-self: center;
+}
+
+.game-settings {
+  width: 30%;
+  display: none;
+}
+.game-info > h3 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.game-info h4 {
+  display: flex;
+  justify-content: space-between;
+}
+
+#oWins, #oLost, #xWins, #xLost {
+  margin-right: 30px;
 }
 
 .board-container {
