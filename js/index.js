@@ -2,13 +2,11 @@ const Gameboard = (function() {
     let gameBoard = Array.from(Array(3), () => new Array(3));
 
     const getBoard = () => {
-        gameBoard;
-        console.log(gameBoard);
+        return gameBoard;
     }
 
     const turn = (playerMarker, row, column) => {
         gameBoard[row][column] = playerMarker;
-        console.log(gameBoard);
     };
     
     const reset = () => {
@@ -36,14 +34,19 @@ const Player = (name, marker) => {
 
 const Game = (() => {   
     
-    const move = (player1, player2) => {
+    const move = (player1, player2, row, column) => {
+        let tempMarker = ""
         if (player1.turn == true){
             player1.turn = false;
             player2.turn = true;
+            tempMarker = "X"
+
         } else {
             player1.turn = true;
             player2.turn = false;
+            tempMarker = "0"
         }
+        Gameboard.turn(tempMarker, row, column);
     };
 
     return { move };
@@ -55,13 +58,24 @@ let playerA = Player("Denis", "X");
 let playerB = Player("Josue", "O");
 playerB.setTurn(false);
 
-const turn1 = Gameboard.turn(playerA.getMarker(), 0, 0);
-console.log(turn1);
-Game.move(playerA, playerB);
+setTimeout(function(){
+    Game.move(playerA, playerB, 0, 1);
+    console.log(Gameboard.getBoard());
+    setTimeout(function(){
+        Game.move(playerA, playerB, 1, 2);
+        console.log(Gameboard.getBoard());
+        setTimeout(function(){
+            Game.move(playerA, playerB, 0, 2);
+            console.log(Gameboard.getBoard());
+            setTimeout(function(){
+                Game.move(playerA, playerB, 2, 1);
+                console.log(Gameboard.getBoard());
+            }, 3000);
+        }, 3000);
+    }, 3000);
+}, 3000);
 
-const turn2 = Gameboard.turn(playerB.getMarker(), 0, 2);
-console.log(turn2);
-Game.move(playerA, playerB);
+
 
 // const turn3 = Gameboard.turn(playerA.getMarker(), 2, 2);
 // console.log(turn3);
