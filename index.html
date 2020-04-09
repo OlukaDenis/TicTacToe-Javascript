@@ -1,13 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/index.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/index.css" />
     <title>Tic Tac Toe</title>
-</head>
-<body>
-    
+  </head>
+  <body>
+    <form class="form" id="form">
+      <label for="player1">Player 1 name</label>
+      <input type="text" name="player1" id="player1" />
+      <label for="player2">Player 2 name</label>
+      <input type="text" name="player2" id="player2" />
+      <input type="submit" name="sumbit" id="setPlayerBtn" value="Start game" />
+    </form>
+    <div class="board-container" id="boardContainer">
+      <div class="board">
+        <div class="board-cell cursor-pointer" id="0|0"></div>
+        <div class="board-cell cursor-pointer" id="0|1"></div>
+        <div class="board-cell cursor-pointer" id="0|2"></div>
+        <div class="board-cell cursor-pointer" id="1|0"></div>
+        <div class="board-cell cursor-pointer" id="1|1"></div>
+        <div class="board-cell cursor-pointer" id="1|2"></div>
+        <div class="board-cell cursor-pointer" id="2|0"></div>
+        <div class="board-cell cursor-pointer" id="2|1"></div>
+        <div class="board-cell cursor-pointer" id="2|2"></div>
+      </div>
+      <!-- <table class="board" id="board">
+        <tbody class="tbody">
+          <tr>
+            <td>X</td>
+            <td>0</td>
+            <td>X</td>
+          </tr>
+          <tr>
+            <td>X</td>
+            <td>X</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>0</td>
+            <td>X</td>
+            <td>0</td>
+          </tr>
+        </tbody>
+      </table> -->
+    </div>
     <script src="js/index.js"></script>
-</body>
+  </body>
 </html>
