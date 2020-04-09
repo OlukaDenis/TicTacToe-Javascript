@@ -1,13 +1,21 @@
 const Gameboard = (function() {
     let gameBoard = Array.from(Array(3), () => new Array(3));
 
-    const getBoard = () => gameBoard;
+    const getBoard = () => {
+        gameBoard;
+        console.log(gameBoard);
+    }
+
+    const turn = (playerMarker, row, column) => {
+        gameBoard[row][column] = playerMarker;
+        console.log(gameBoard);
+    };
     
     const reset = () => {
         gameBoard = Array.from(Array(3), () => new Array(3));
         console.log(gameBoard)
     }
-    return { getBoard, reset };
+    return { getBoard, turn, reset };
 })();
 
 const Player = (name, marker) => {
@@ -24,32 +32,38 @@ const Player = (name, marker) => {
     return { name, marker, getMarker, setTurn, getTurn, getWins, setWin };
 };
 
-const Game = (() => {
-    let gameBoard = Gameboard.getBoard;
 
-    const turn = (playerMarker, row, column) => {
-        gameBoard[row][column] = playerMarker;
-        console.log(gameBoard)
+
+const Game = (() => {   
+    
+    const move = (player1, player2) => {
+        if (player1.turn == true){
+            player1.turn = false;
+            player2.turn = true;
+        } else {
+            player1.turn = true;
+            player2.turn = false;
+        }
     };
 
-    return { turn };
+    return { move };
 })();
 
+
+Gameboard.getBoard();
 let playerA = Player("Denis", "X");
 let playerB = Player("Josue", "O");
 playerB.setTurn(false);
 
-// const turn1 = Game.turn(playerA.getMarker, 0, 0);
-// console.log(turn1);
-// playerA.setTurn(false);
-// playerB.setTurn(true);
+const turn1 = Gameboard.turn(playerA.getMarker(), 0, 0);
+console.log(turn1);
+Game.move(playerA, playerB);
 
-// const turn2 = Game.turn(playerB.getMarker, 0, 2);
-// console.log(turn2);
-// playerB.setTurn(false);
-// playerA.setTurn(true);
+const turn2 = Gameboard.turn(playerB.getMarker(), 0, 2);
+console.log(turn2);
+Game.move(playerA, playerB);
 
-// const turn3 = Game.turn(playerA.getMarker, 2, 2);
+// const turn3 = Gameboard.turn(playerA.getMarker(), 2, 2);
 // console.log(turn3);
 // playerA.setTurn(false);
 // playerB.setTurn(true)
@@ -58,5 +72,3 @@ playerB.setTurn(false);
 // console.log(turn4);
 // playerB.setTurn(false);
 // playerA.setTurn(true);
-
-
