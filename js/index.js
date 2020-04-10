@@ -151,9 +151,9 @@ btnSetPlayers.addEventListener('click', () => {
   }
 });
 
-document.querySelectorAll('.board-cell').forEach(function l(el) {
-  let cell = el;
-  el.addEventListener('click', function () {
+document.querySelectorAll('.board-cell').forEach(el => {
+  const cell = el;
+  el.addEventListener('click', function d() {
     if (el.id === lastClick) {
       return;
     }
@@ -161,8 +161,8 @@ document.querySelectorAll('.board-cell').forEach(function l(el) {
       return;
     }
     lastClick = el.id;
-    let row = +this.id.split('|')[0];
-    let column = +this.id.split('|')[1];
+    const row = +this.id.split('|')[0];
+    const column = +this.id.split('|')[1];
     if (cell.textContet === 'X' || cell.textContent === 'O') {
       return;
     }
@@ -172,8 +172,15 @@ document.querySelectorAll('.board-cell').forEach(function l(el) {
   });
 });
 
+const resetGame = () => {
+  Gameboard.reset();
+  playerStatus.style.display = 'none';
+  counter = 0;
+};
+
 const finishGame = document.getElementById('finishGame');
 finishGame.addEventListener('click', () => {
+  const boardContainer = document.querySelector('#boardContainer');
   boardContainer.style.display = 'none';
   gameSetting.style.display = 'none';
   form.style.display = 'flex';
@@ -199,9 +206,3 @@ resetBtn.addEventListener('click', () => {
     resetGame();
   }
 });
-
-const resetGame = () => {
-  Gameboard.reset();
-  playerStatus.style.display = 'none';
-  counter = 0;
-};
