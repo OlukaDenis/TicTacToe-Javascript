@@ -49,18 +49,38 @@ const Gameboard = (function c() {
   const reset = () => {
     gameBoard = Array.from(Array(3), () => new Array(3));
   };
-  return { checkWinner, getBoard, turn, reset };
+  return {
+    checkWinner,
+    getBoard,
+    turn,
+    reset
+  };
 }());
 
-const Player = (name, marker) => {
-  let turn = true;
-  let wins = 0;
+const Player = (name, marker, turn = true, wins = 0) => {
   const getTurn = () => turn;
   const setTurn = (newTurn) => (turn = newTurn);
   const getMarker = () => (marker === 'X' ? 'X' : 'O');
   const getWins = () => wins;
   const setWin = () => (wins += 1);
-  return { name, marker, getMarker, setTurn, getTurn, getWins, setWin };
+  return { 
+    name, 
+    marker, 
+    getMarker, 
+    setTurn, 
+    getTurn, 
+    getWins, 
+    setWin 
+  };
+};
+
+const getGameStats = () => {
+  playerX.innerHTML = player1.name;
+  playerO.innerHTML = player2.name;
+  xWins.innerHTML = player1.getWins();
+  oWins.innerHTML = player2.getWins();
+  xLost.innerHTML = player2.getWins();
+  oLost.innerHTML = player1.getWins();
 };
 
 const Game = (() => {
@@ -105,8 +125,8 @@ form.addEventListener('submit', handleForm);
 const btnSetPlayers = document.getElementById('setPlayerBtn');
 const gameSetting = document.querySelector('.game-settings');
 btnSetPlayers.addEventListener('click', () => {
-  let nameOne = document.getElementById('player1').value;
-  let nameTwo = document.getElementById('player2').value;
+  const nameOne = document.getElementById('player1').value;
+  const nameTwo = document.getElementById('player2').value;
   const oError = document.getElementById('error2');
   const xError = document.getElementById('error1');
   if (nameOne === '' || nameOne === null) {
@@ -155,15 +175,6 @@ document.querySelectorAll('.board-cell').forEach(function (el) {
   });
 });
 
-const getGameStats = () => {
-  playerX.innerHTML = player1.name;
-  playerO.innerHTML = player2.name;
-  xWins.innerHTML = player1.getWins();
-  oWins.innerHTML = player2.getWins();
-  xLost.innerHTML = player2.getWins();
-  oLost.innerHTML = player1.getWins();
-};
-
 const finishGame = document.getElementById('finishGame');
 finishGame.addEventListener('click', () => {
   boardContainer.style.display = 'none';
@@ -175,9 +186,9 @@ finishGame.addEventListener('click', () => {
 const resetBtn = document.getElementById('resetGame');
 resetBtn.addEventListener('click', () => {
   for (let i = 0; i < 3; i += 1) {
-    const firstRow = document.getElementById('0|' + i);
-    const secondRow = document.getElementById('1|' + i);
-    const thirdRow = document.getElementById('2|' + i);
+    const firstRow = document.getElementById(`0|${i}`);
+    const secondRow = document.getElementById(`1|${i}`);
+    const thirdRow = document.getElementById(`2|${i}`);
     firstRow.innerHTML = '';
     secondRow.innerHTML = '';
     thirdRow.innerHTML = '';
