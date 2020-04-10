@@ -2,13 +2,14 @@ let player1 = "";
 let player2 = "";
 let lastClick = "";
 let gameState = false;
-
+let counter = 0;
 const playerX = document.querySelector('#playerX');
 const playerO = document.querySelector('#playerO'); 
 const xWins = document.getElementById('xWins');
 const oWins = document.getElementById('oWins');
 const oLost = document.getElementById('oLost');
 const xLost = document.getElementById('xLost');
+const playerStatus = document.querySelector('#playerStatus');
 
 const Gameboard = (function () {
   let gameBoard = Array.from(Array(3), () => new Array(3));
@@ -59,6 +60,7 @@ const Game = (() => {
   const move = (row, column, cell) => {
     let tempMarker = "";
     let winner = '';
+    counter += 1;
     if (player1.getTurn() === true) {
       player1.setTurn(false);
       player2.setTurn(true);
@@ -75,7 +77,14 @@ const Game = (() => {
     if (Gameboard.checkWinner()) {
         gameState = true;
         winner.setWin();
+        playerStatus.style.display = 'block';
+        playerStatus.innerHTML = winner.name + ' has won! '
         getGameStats();
+    }
+    if (counter === 9){
+      playerStatus.style.display = 'block';
+      playerStatus.innerHTML = 'It is a draw';
+      console.log("This is a draw")
     }
   };
 
@@ -90,17 +99,35 @@ form.addEventListener("submit", handleForm);
 const btnSetPlayers = document.getElementById("setPlayerBtn");
 const gameSetting = document.querySelector('.game-settings');
 btnSetPlayers.addEventListener("click", () => {
-  const nameOne = document.getElementById("player1").value;
-  const nameTwo = document.getElementById("player2").value;
-  player1 = Player(nameOne, "X");
-  player1.setTurn(true);
-  player2 = Player(nameTwo, "O");
-  player2.setTurn(false);
-  const boardContainer = document.querySelector("#boardContainer");
-  boardContainer.style.display = "flex";
-  gameSetting.style.display = "block"
-  form.style.display = 'none';
-  getGameStats();
+  let nameOne = document.getElementById("player1").value;
+  let nameTwo = document.getElementById("player2").value;
+  const oError = document.getElementById('error2');
+  const xError = document.getElementById('error1');
+  if (nameOne === '' || nameOne === null) {
+    xError.style.display = 'block';
+    oError.style.display = 'none';
+    return;
+  } else if (nameTwo === '' || nameTwo === null) {
+    oError.style.display = 'block';
+    xError.style.display = 'none';
+    return;
+  } else {
+    oError.style.display = 'none';
+    xError.style.display = 'none';
+    
+    player1 = Player(nameOne, "X");
+    player1.setTurn(true);
+    player2 = Player(nameTwo, "O");
+    player2.setTurn(false);
+    const boardContainer = document.querySelector("#boardContainer");
+    boardContainer.style.display = "flex";
+    gameSetting.style.display = "block"
+    form.style.display = 'none';
+    getGameStats();
+    document.getElementById('player1').value = '';
+    document.getElementById('player2').value = '';
+
+  }  
 });
 
 
@@ -114,7 +141,6 @@ document.querySelectorAll(".board-cell").forEach(function (el) {
     if (gameState === true){
         return;
     }
-
     lastClick = el.id;
     let row = +this.id.split("|")[0];
     let column = +this.id.split("|")[1];
@@ -166,5 +192,9 @@ resetBtn.addEventListener('click', () => {
 
 const resetGame = () => {
     Gameboard.reset();
+    playerStatus.style.display = 'none';
+    counter = 0;
 };
 
+// const xError = document.getElementById('error1');
+// xError.style.display = 'block';
