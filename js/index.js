@@ -53,7 +53,7 @@ const Gameboard = (function c() {
     checkWinner,
     getBoard,
     turn,
-    reset
+    reset,
   };
 }());
 
@@ -63,14 +63,14 @@ const Player = (name, marker, turn = true, wins = 0) => {
   const getMarker = () => (marker === 'X' ? 'X' : 'O');
   const getWins = () => wins;
   const setWin = () => (wins += 1);
-  return { 
-    name, 
-    marker, 
-    getMarker, 
-    setTurn, 
-    getTurn, 
-    getWins, 
-    setWin 
+  return {
+    name,
+    marker,
+    getMarker,
+    setTurn,
+    getTurn,
+    getWins,
+    setWin,
   };
 };
 
