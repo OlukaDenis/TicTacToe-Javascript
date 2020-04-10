@@ -105,13 +105,12 @@ const Game = (() => {
       gameState = true;
       winner.setWin();
       playerStatus.style.display = 'block';
-      playerStatus.innerHTML = winner.name + ' has won! ';
+      playerStatus.innerHTML = `${winner.name} has won!`;
       getGameStats();
     }
     if (counter === 9) {
       playerStatus.style.display = 'block';
       playerStatus.innerHTML = 'It is a draw';
-      console.log('This is a draw');
     }
   };
   return { move };
@@ -132,11 +131,9 @@ btnSetPlayers.addEventListener('click', () => {
   if (nameOne === '' || nameOne === null) {
     xError.style.display = 'block';
     oError.style.display = 'none';
-    return;
   } else if (nameTwo === '' || nameTwo === null) {
     oError.style.display = 'block';
     xError.style.display = 'none';
-    return;
   } else {
     oError.style.display = 'none';
     xError.style.display = 'none';
@@ -154,7 +151,7 @@ btnSetPlayers.addEventListener('click', () => {
   }
 });
 
-document.querySelectorAll('.board-cell').forEach(function (el) {
+document.querySelectorAll('.board-cell').forEach(function l(el) {
   let cell = el;
   el.addEventListener('click', function () {
     if (el.id === lastClick) {
