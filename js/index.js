@@ -11,19 +11,17 @@ const oLost = document.getElementById('oLost');
 const xLost = document.getElementById('xLost');
 const playerStatus = document.querySelector('#playerStatus');
 
-const Gameboard = (function () {
+const Gameboard = (function c() {
   let gameBoard = Array.from(Array(3), () => new Array(3));
-  const getBoard = () => {
-    return gameBoard;
-  };
+  const getBoard = () => gameBoard;
   const turn = (playerMarker, row, column) => {
     gameBoard[row][column] = playerMarker;
   };
   const checkWinner = () => {
     if (
       (gameBoard[0][0] != null &&
-        gameBoard[0][0] === gameBoard[0][1] &&
-        gameBoard[0][1] === gameBoard[0][2]) ||
+        gameBoard[0][0] === gameBoard[0][1]
+        && gameBoard[0][1] === gameBoard[0][2]) ||
       (gameBoard[1][0] != null &&
         gameBoard[1][0] === gameBoard[1][1] &&
         gameBoard[1][1] === gameBoard[1][2]) ||
@@ -54,7 +52,7 @@ const Gameboard = (function () {
     gameBoard = Array.from(Array(3), () => new Array(3));
   };
   return { checkWinner, getBoard, turn, reset };
-})();
+}());
 
 const Player = (name, marker) => {
   let turn = true;
