@@ -65,7 +65,10 @@ const Player = (name, marker, turn = true, wins = 0) => {
   };
   const getMarker = () => (marker === 'X' ? 'X' : 'O');
   const getWins = () => wins;
-  const setWin = () => (wins += 1);
+  const setWin = () => {
+    wins += 1;
+    return getWins();
+  };
   return {
     name,
     marker,
@@ -110,8 +113,7 @@ const Game = (() => {
       playerStatus.style.display = 'block';
       playerStatus.innerHTML = `${winner.name} has won!`;
       getGameStats();
-    }
-    if (counter === 9) {
+    } else if (counter === 9) {
       playerStatus.style.display = 'block';
       playerStatus.innerHTML = 'It is a draw';
     }
