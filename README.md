@@ -1,10 +1,11 @@
+
 [![Contributors][contributors-shield]][contributors-url]
 [![Issues][issues-shield]][issues-url]
-<br />
+
 
 <p align="center">
  
-  <h3 align="center">Tic Tac Toe JavaScript</h3>
+  <h1 align="center">Project: Tic Tac Toe</h1>
   <p align="center">
     Tic Tac Toe game created with HTML 5, CSS and JavaScript
     <br />
@@ -23,8 +24,8 @@
 ## Table of Contents
 
 - [About the Project](#about-the-project)
-  - [Built With](#built-with)
-- [Use](#use)
+- [Built With](#built-with)
+- [Live link](#live-link)
 - [Roadmap](#roadmap)
 - [License](#license)
 - [Contact](#contact)
@@ -41,13 +42,16 @@ Full task description: [https://www.theodinproject.com/courses/javascript/lesson
 
 This project was built with HTML 5, CSS, JavaScript
 
+### Live link
+Live [here](https://raw.githack.com/OlukaDenis/TicTacToe-Javascript/development/index.html)
+
 ## Getting Started
 
 - Open your terminal
 
 - Type "git clone https://github.com/OlukaDenis/TicTacToe-Javascript.git"
 
-- go to the folder called "TicTacToe Javascript"
+- Go to the folder called "TicTacToe-Javascript"
 
 - Open the file "index.html" with your favorite browser
 
@@ -61,14 +65,16 @@ See the [open issues](https://github.com/OlukaDenis/TicTacToe-Javascript/issues)
 
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the MIT License. See [LICENSE](https://github.com/OlukaDenis/TicTacToe-Javascript/LICENSE) for more information.
 
 <!-- CONTACT -->
 
 ## Contact
 
-Josue Brigido - [Github profile](https://github.com/kalavhan)
-Denis Oluka - [Github profile](https://github.com/OlukaDenis)
+#### Josue Brigido
+ [Github](https://github.com/kalavhan) | [LinkedIn](https://www.linkedin.com/in/kalavhan/)
+#### Denis Oluka
+[Github profile](https://github.com/OlukaDenis) | [LinkedIn](https://www.linkedin.com/in/kalavhan/)
 
 Project Link: [Project repo](https://github.com/OlukaDenis/TicTacToe-Javascript/)
 
