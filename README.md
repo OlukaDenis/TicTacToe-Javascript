@@ -74,7 +74,7 @@ Distributed under the MIT License. See [LICENSE](https://github.com/OlukaDenis/T
 #### Josue Brigido
  [Github](https://github.com/kalavhan) | [LinkedIn](https://www.linkedin.com/in/kalavhan/)
 #### Denis Oluka
-[Github profile](https://github.com/OlukaDenis) | [LinkedIn](https://www.linkedin.com/in/kalavhan/)
+[Github](https://github.com/OlukaDenis) | [LinkedIn](https://www.linkedin.com/in/denis-oluka/)
 
 Project Link: [Project repo](https://github.com/OlukaDenis/TicTacToe-Javascript/)
 
