@@ -38,6 +38,9 @@ This project requires to build a Tic Tac Toe game only using HTML, CSS and JavaS
 
 Full task description: [https://www.theodinproject.com/courses/javascript/lessons/tic-tac-toe-javascript](https://www.theodinproject.com/courses/javascript/lessons/tic-tac-toe-javascript).
 
+### Screenshot
+![tictactoe](https://user-images.githubusercontent.com/37341054/79595461-94c59980-80e7-11ea-9dbf-d048c1593a61.png)
+
 ### Built With
 
 This project was built with HTML 5, CSS, JavaScript
