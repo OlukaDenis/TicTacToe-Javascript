@@ -1,4 +1,5 @@
 import Gameboard from './modules/board';
+import Player from './modules/player';
 import './index.css';
 
 let player1 = '';
@@ -13,29 +14,6 @@ const oWins = document.getElementById('oWins');
 const oLost = document.getElementById('oLost');
 const xLost = document.getElementById('xLost');
 const playerStatus = document.querySelector('#playerStatus');
-
-const Player = (name, marker, turn = true, wins = 0) => {
-  const getTurn = () => turn;
-  const setTurn = (newTurn) => {
-    turn = newTurn;
-    return newTurn;
-  };
-  const getMarker = () => (marker === 'X' ? 'X' : 'O');
-  const getWins = () => wins;
-  const setWin = () => {
-    wins += 1;
-    return getWins();
-  };
-  return {
-    name,
-    marker,
-    getMarker,
-    setTurn,
-    getTurn,
-    getWins,
-    setWin,
-  };
-};
 
 const getGameStats = () => {
   playerX.innerHTML = player1.name;
