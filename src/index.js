@@ -73,9 +73,19 @@ btnSetPlayers.addEventListener('click', () => {
     oError.style.display = 'none';
     xError.style.display = 'none';
 
-    player1 = Player(nameOne, 'X');
+    player1 = Player;
+    player2 = Player;
+
+    player1.setName(nameOne);
+    player2.setName(nameTwo);
+
+    player1.setMarker('X');
+    player2.setMarker('O');
+
+    console.log(player1.marker());
+    console.log(player2.marker());
+
     player1.setTurn(true);
-    player2 = Player(nameTwo, 'O');
     player2.setTurn(false);
     const boardContainer = document.querySelector('#boardContainer');
     boardContainer.style.display = 'flex';
