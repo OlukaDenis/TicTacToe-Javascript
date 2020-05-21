@@ -1,4 +1,5 @@
 import Gameboard from '../src/modules/board';
+import Player from '../src/modules/player';
 
 describe('Test for Gameboard module', () => {
   let board = '';
@@ -38,4 +39,28 @@ describe('Test for Gameboard module', () => {
     board.reset();
     expect(board.getBoard()).toEqual(emptyBoard);
   });
+});
+
+describe('Test for the Players', () => {
+  const player1 = Player('John Doe', 'X')
+  const player2 = Player('Alice Doe', 'O');
+
+  test('It should set the name and marker of the player1', () => {
+      expect(player1.name).toEqual('John Doe');
+  });
+
+  test('It should set player 2 turn to be true', () => {
+      expect(player2.turn).toBeTruthy;
+  });
+
+  test('It should return the players turn to be false', () => {
+    player1.setTurn(false);
+    expect(player1.getTurn()).toBeFalsy;
+  });
+
+  test('It should return another player\'s win', () => {
+    player1.setWin();
+    expect(player1.getWins()).toEqual(1);
+  });
+
 });
