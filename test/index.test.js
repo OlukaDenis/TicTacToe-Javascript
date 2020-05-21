@@ -42,25 +42,24 @@ describe('Test for Gameboard module', () => {
 });
 
 describe('Test for the Players', () => {
-  const player1 = Player('John Doe', 'X')
+  const player1 = Player('John Doe', 'X');
   const player2 = Player('Alice Doe', 'O');
 
   test('It should set the name and marker of the player1', () => {
-      expect(player1.name).toEqual('John Doe');
+    expect(player1.name).toEqual('John Doe');
   });
 
   test('It should set player 2 turn to be true', () => {
-      expect(player2.turn).toBeTruthy;
+    expect(player2.getTurn()).toBeTruthy();
   });
 
   test('It should return the players turn to be false', () => {
     player1.setTurn(false);
-    expect(player1.getTurn()).toBeFalsy;
+    expect(player1.getTurn()).toBeFalsy();
   });
 
   test('It should return another player\'s win', () => {
     player1.setWin();
     expect(player1.getWins()).toEqual(1);
   });
-
 });
