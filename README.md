@@ -72,9 +72,9 @@ $ npm run server
 This will run the game and open it on port 9000 automatically, in case is not open go to 127.0.0.1:9000 in your browser
 
 ## Testing the code
-
-- Type "npm run test"
-
+```sh
+$ npm run test
+```
 This will run the test in your console
 
 <!-- ROADMAP -->
