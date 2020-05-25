@@ -48,15 +48,34 @@ This project was built with HTML 5, CSS, JavaScript
 ### Live link
 Live [here](https://raw.githack.com/OlukaDenis/TicTacToe-Javascript/development/index.html)
 
-## Getting Started
+## Setup
 
-- Open your terminal
+Use the [git](https://git-scm.com/downloads) to clone the project to your local machine.
+```sh
+$ git clone https://github.com/OlukaDenis/TicTacToe-Javascript.git
+```
 
-- Type "git clone https://github.com/OlukaDenis/TicTacToe-Javascript.git"
+Navigate to the extracted folder
+```sh 
+cd TicTacToe-Javascript
+```
 
-- Go to the folder called "TicTacToe-Javascript"
+Install the dependencies and modules
+```sh
+$ npm install
+```
 
-- Open the file "index.html" with your favorite browser
+### Usage
+```sh
+$ npm run server
+```
+This will run the game and open it on port 9000 automatically, in case is not open go to 127.0.0.1:9000 in your browser
+
+## Testing the code
+```sh
+$ npm run test
+```
+This will run the test in your console
 
 <!-- ROADMAP -->
 

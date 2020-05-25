@@ -1,0 +1,45 @@
+{
+  "name": "tictactoe-javascript",
+  "version": "1.0.0",
+  "description": "Play game online",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "webpack --mode production",
+    "start": "webpack --watch --mode development",
+    "server": "webpack-dev-server --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OlukaDenis/TicTacToe-Javascript.git"
+  },
+  "keywords": [
+    "tic",
+    "tac",
+    "toe"
+  ],
+  "author": "Denis Oluka & Josue Brigidio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OlukaDenis/TicTacToe-Javascript/issues"
+  },
+  "homepage": "https://github.com/OlukaDenis/TicTacToe-Javascript#readme",
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "babel-jest": "^26.0.1",
+    "babel-loader": "^8.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-import-resolver-webpack": "^0.12.1",
+    "eslint-plugin-import": "^2.20.2",
+    "file-loader": "^6.0.0",
+    "css-loader": "^3.5.2",
+    "jest": "^26.0.1",
+    "style-loader": "^1.1.4",
+    "url-loader": "^4.1.0",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
